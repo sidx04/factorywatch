@@ -1,0 +1,33 @@
+# MediaMTX config for FactoryWatch local development.
+#
+# Run with: make mediamtx
+# The Docker Compose step will reuse this same file.
+#
+# Only RTSP is enabled. Any key not listed here uses MediaMTX's default
+# (reference: /opt/homebrew/etc/mediamtx/mediamtx.yml for v1.21.4).
+#
+# The control API is for inspection while learning (e.g. listing publishers).
+# MediaMTX listing a publisher does NOT prove frames are fresh or decodable;
+# that is the stream monitor's job.
+
+logLevel: info
+
+# Bound to localhost only
+api: true
+apiAddress: 127.0.0.1:9997
+
+# RTSP server 
+# Publishers and readers may use TCP
+rtsp: true
+rtspAddress: :8554
+
+# Other protocols off to keep ports and logs quiet
+rtmp: false
+hls: false
+webrtc: false
+srt: false
+moq: false
+
+# Accept any publisher path (CAM-001, SMOKE-1, ...).
+paths:
+  all_others:

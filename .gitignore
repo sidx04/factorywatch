@@ -221,3 +221,16 @@ __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
+
+# other
+videos/*
+!videos/.gitkeep
+datasets/*
+!datasets/README.md
+bin/
+*.test
+*.out
+.DS_Store
+# MediaMTX auto-generated TLS files (should not appear with moq disabled)
+auto.key
+auto.crt
